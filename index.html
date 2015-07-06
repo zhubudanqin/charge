@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>家庭管账系统</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />-->
+		<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+		<!--<script type="text/javascript" src="js/bootstrap.min.js"></script>-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/config.js"></script>
+		<script type="text/javascript" src="js/FusionChartsFree/JSClass/FusionCharts.js"></script>
+
+		<script type="text/javascript" src="./js/base.js"></script>
+		<script type="text/javascript" src="./js/common.js"></script>
+
+		<script type="text/javascript">
+			Ajzhan = $.extend(Ajzhan,{
+			                SITENAME: "爱记账",
+			                SITEURL: "http://www.ajzhan.com",
+			                RESOURCEURL: "/res",
+			                BASEURL:"/",
+			                SERVICEURL: "ajax",
+			                NOTEFREQUENCY:10000
+			            });
+			            Ajzhan.namespace("Ajzhan.SNS.user");
+			            Ajzhan.common.user.info = {
+			                user_id:354757,
+			                username:'s55750cab6df08',
+			                nickname:'s55750cab6df08'
+			            };
+		</script>
+	</head>
+
+	<body id="wrap">
+		<div class="header">
+			<div class="w_container">
+				<div class="logo">
+					<a href="javascript:;">
+						<img src="images/logo.jpg" height="47" width="151">
+					</a>
+				</div>
+				<nav>
+					<ul>
+						<li><a class="current" href="javascript:;">首页</a>
+						</li>
+						<li><a href="javascript:;">报表</a>
+						</li>
+						<li><a href="javascript:;">预算</a>
+						</li>
+						<li><a href="javascript:;">理财</a>
+						</li>
+						<li><a href="javascript:;">手机版</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="avatar">
+					<div class="avatar_img">
+						<a href="javascript:;">
+							<img src="images/100.jpg" height="100" width="100">
+						</a>
+					</div>
+					<div class="f-fl">
+						<p class="f14"><a href="javascript:;">等待三天</a>
+						</p>
+						<p style="font-size:12px;">账龄：2天</p>
+					</div>
+					<div class="mod">
+						<a href="javascript:;" class="h_btn"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- mian -->
+		<div class="main w_container">
+			<div class="simple_left">
+				<!-- 标题[[ -->
+				<div class="simple_tit">
+					<ul class="simple_ul">
+						<li class="others" date="2015-06-05" year="2015" m="" day="05" datatime="1431446400">
+							<p class="date">05</p>
+							<p class="number">
+								<span class="ico"></span>
+								<span>4143</span>元
+							</p>
+						</li>
+						<li date="2015-06-06" year="2015" month="06" m="" day="06" datatime="1431532800">
+							<p class="date">06</p>
+							<p class="number">
+								<span class="ico"></span>
+								<span>4143</span>元
+							</p>
+						</li>
+						<li date="2015-06-07" year="2015" month="06" m="" day="07" datatime="1431619200">
+							<p class="date">07</p>
+							<p class="number">
+								<span class="ico"></span>
+								<span>4143</span>元
+							</p>
+						</li>
+						<li date="2015-06-08" year="2015" month="06" m-day="08" datatime="2431705600">
+							<p class="date">08</p>
+							<p class="number">
+								<span class="ico"></span>
+								<span>0</span>元
+							</p>
+						</li>
+						<li date="2015-06-09" year="2015" month="06" m-day="09" datatime="1431792000">
+							<p class="date">09</p>
+							<p class="number">
+								<span class="ico"></span>
+								<span>0</span>元
+							</p>
+						</li>
+						<li class="cur" date="2015-06-10" year="2015" month="06" m="" day="10" datatime="1431878400">
+							<p class="date">10</p>
+							<p class="number">
+								<span class="ico"></span>
+								<span>0</span>元
+							</p>
+						</li>
+					</ul>
+					<div class="simple_date" onClick="WdatePicker()">
+						<p class="d1">2015</p>
+						<p class="d2">月</p>
+					</div>
+				</div>
+				<!-- 标题]] -->
+				<!-- 内容[[ -->
+				<div class="simple_ct">
+
+					<div class="simple_money">
+						<input type="hidden" id="tally_type" value="" />
+						<input type="hidden" id="tally_cate" value="" />
+						<input type="hidden" value="2015-06-08" id="tally_time" name="tally_time" />
+						<input type="hidden" id="tally_pic" value="" />
+						<input type="hidden" id="account_id" value="1319262" />
+						<input autocomplete="off" init-tip="0" id="money_text" type="text" onblur="if(!this.value.match(/^(?:[\+\-]?\d+(?:\.\d+)?|\.\d*?)?$/))this.value=this.o_value;else{if(this.value.match(/^\.\d+$/))this.value=0+this.value;if(this.value.match(/^\.$/))this.value=0;this.o_value=this.value}"
+						onkeyup="if(!this.value.match(/^[\+\-]?\d*?\.?\d*?$/))this.value=this.t_value;else this.t_value=this.value;if(this.value.match(/^(?:[\+\-]?\d+(?:\.\d+)?)?$/))this.o_value=this.value" onkeypress="if(!this.value.match(/^[\+\-]?\d*?\.?\d*?$/))this.value=this.t_value;else this.t_value=this.value;if(this.value.match(/^(?:[\+\-]?\d+(?:\.\d+)?)?$/))this.o_value=this.value"
+						name="money" value="0" class="simple_input" />
+						<span class="counter" onclick="CalcShow()"></span>
+						<!--计算器的html[[-->
+						<div title="计算器" style="display: none;right: 3px" id="calc">
+							<form name="Keypad" id="Keypad">
+								<div class="led">
+									<input width="100%" name="ReadOut" value="0" id="ReadOut" class="ledput" />
+									<input type="button" class="ledbtn" id="HideCalc" onclick="resultShow($('#money_text'))" name="btnClear" />
+								</div>
+								<div class="js_bg f-clear">
+									<div class="num js_num" style="float: left; width: 180px;">
+										<input type="button" name="btnOne" value="1" onclick="NumPressed(1)" />
+										<input type="button" name="btnTwo" value="2" onclick="NumPressed(2)" />
+										<input type="button" name="btnThree" value="3" onclick="NumPressed(3)" />
+										<input type="button" name="btnFour" value="4" onclick="NumPressed(4)" />
+										<input type="button" name="btnFive" value="5" onclick="NumPressed(5)" />
+										<input type="button" name="btnSix" value="6" onclick="NumPressed(6)" />
+										<input type="button" name="btnSeven" value="7" onclick="NumPressed(7)" />
+										<input type="button" name="btnEight" value="8" onclick="NumPressed(8)" />
+										<input type="button" name="btnNine" value="9" onclick="NumPressed(9)" />
+										<input type="button" class="js_num_put" name="btnClear" value="C" onclick="Clear()" />
+										<input type="button" name="btnZero" value="0" onclick="NumPressed(0)" />
+										<!--<input type="button" onclick="Neg()" value="+/-" name="btnNeg"></input>-->
+										<input type="button" name="btnDecimal" value="." onclick="Decimal()" />
+									</div>
+									<div class="op js_op">
+										<input type="button" name="btnPlus" value="+" onclick="Operation('+')" />
+										<input type="button" name="btnMinus" value="-" onclick="Operation('-')" />
+										<input type="button" class="js_num_tui" name="btnMinus" value="" onclick="ClearNum()" />
+										<input type="button" name="btnEquals" value="=" onclick="Operation('=')" />
+										<!--<input type="button" onclick="Percent()" value="%" name="btnPercent"></input>
+                                            <input type="button" onclick="Operation('*')" value="*" name="btnMultiply"></input>
+                                            <input type="button" onclick="Operation('/')" value="/" name="btnDivide"></input>
+                                            <input type="button" onclick="ClearEntry()" value="CE" name="btnClearEntry"></input>-->
+									</div>
+								</div>
+							</form>
+							<div style=""></div>
+						</div>
+						<!--计算器的html]]-->
+					</div>
+
+					<div class="simple_list f-clear">
+						<ul>
+							<li><a href="javascript:;" cid="8" class="s1" style="  background-color: rgb(247, 249, 234);">餐饮饮食</a>
+							</li>
+							<li><a href="javascript:;" cid="9" class="s1" style="  background-color: rgb(247, 249, 234);">水果零食</a>
+							</li>
+							<li><a href="javascript:;" cid="10" class="s1" style="  background-color: rgb(247, 249, 234);">日常用品</a>
+							</li>
+							<li><a href="javascript:;" cid="11" class="s1" style="background-color:#fef6ec">柴米油盐</a>
+							</li>
+							<li><a href="javascript:;" cid="12" class="s1" style="background-color:#fef6ec">物业水电</a>
+							</li>
+							<li><a href="javascript:;" cid="13" class="s1" style="background-color:#f5f3fb">医疗保健</a>
+							</li>
+							<li><a href="javascript:;" cid="14" class="s1" style="background-color: rgb(247, 249, 234);">交通费</a>
+							</li>
+							<li><a href="javascript:;" cid="15" class="s1" style="background-color: rgb(247, 249, 234);">话费网费</a>
+							</li>
+							<li><a href="javascript:;" cid="16" class="s1" style="background-color: rgb(247, 249, 234)">养车费</a>
+							</li>
+							<li><a href="javascript:;" cid="17" class="s1" style=" background-color:#fef6ec;">旅行娱乐</a>
+							</li>
+							<li><a href="javascript:;" cid="18" class="s1" style=" background-color:#fef6ec;">博彩彩票</a>
+							</li>
+							<li><a href="javascript:;" cid="19" class="s1" style=" background-color:#f5f3fb;">书报音像</a>
+							</li>
+							<li><a href="javascript:;" cid="20" class="s1" style="background-color:#f1fafd">数码产品</a>
+							</li>
+							<li><a href="javascript:;" cid="21" class="s1" style="background-color:#f1fafd">教育培训</a>
+							</li>
+							<li><a href="javascript:;" cid="22" class="s1" style="background-color:#f1fafd">服饰装扮</a>
+							</li>
+							<li><a href="javascript:;" cid="23" class="s1" style="background-color:#fef6ec;">化妆品美容</a>
+							</li>
+							<li><a href="javascript:;" cid="24" class="s1" style="background-color:#fef6ec;">人际来往</a>
+							</li>
+							<li><a href="javascript:;" cid="25" class="s1" style="background-color:#f5f3fb">礼品礼金</a>
+							</li>
+							<li><a href="javascript:;" cid="26" class="s1" style="background-color:#fdfef3;">孝敬长辈</a>
+							</li>
+							<li><a href="javascript:;" cid="27" class="s1" style="background-color:#fdfef3;">房产车产</a>
+							</li>
+							<li><a href="javascript:;" cid="28" class="s1" style="background-color:#fdfef3;">投资亏损</a>
+							</li>
+							<li><a href="javascript:;" cid="29" class="in_type" style="background-color:#f5f3fb">电器家具</a>
+							</li>
+							<li><a href="javascript:;" cid="30" class="s1 in_type" style="background-color:#f5f3fb">其他......</a>
+							</li>
+							<li class="in_type"><a class="s1 s8" cid="36" href="javascript:;" style="background-color:#fef6ec"><em>+</em>收入</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="simple_publish f-clear">
+						<div class="simple_pic f-fl" id="upload_avatar">
+
+						</div>
+						<div class="simple_text f-fl">
+							<textarea name="title" id="tally_title" cols rows class="s_txt" init-tip="备注，限20个汉字以内（可不填）">备注，限20个汉字以内（可不填）</textarea>
+						</div>
+						<div class="simple_btn">
+							<input name="tally_submit" onclick="Ajzhan.common.user.simple_tally.add();" type="button" class="s_btn" />
+						</div>
+					</div>
+
+				</div>
+				<div class="simple_bt" style="display:block">
+				</div>
+				<div id="tall_btn" class="big_button f-clear" style="display: none">
+					<div class="simple_btn">
+						<input type="button" class="s_btn">
+					</div>
+				</div>
+				<!-- 内容]] -->
+				<div class="title simple_title">
+					<ul class="simple_detail_tt">
+						<li>来源</li>
+						<li class="w01">类型</li>
+						<li class="w02">类别</li>
+						<li class="w03">金融</li>
+						<li class="w04">备注</li>
+					</ul>
+				</div>
+				<div class="right_list">
+					<!--没有数据的情况下[[-->
+					<div class="zanwu">
+						<img src="images/zanwu.gif" />
+					</div>
+					<!--没有数据的情况下]]-->
+					<!--有数据的情况下[[-->
+					<div sid="" close="is" class="title list_div f-clear list_gray ">
+						<ul>
+							<li class="11">官网</li>
+							<li class="w01">支出</li>
+							<li class="w02">化妆品美容</li>
+							<li class="w03">12.00</li>
+							<li title="在浦江镇买了化妆品美容" class="w04">在浦江镇买了化妆品美容</li>
+							<li class="iconfont icon-down w05"></li>
+						</ul>
+					</div>
+					<div class="list-box list-box-normal f-clear" is_open="1" sid="">
+						<a href="javascript:;">
+							<img src="images/define.png" height="115" width="115">
+						</a>
+						<div class="list-box_con">
+							<p><strong>记录环境：</strong>官网<b>AA制项目：</b>不是AA制项目</p>
+							<ul class="list-box_ul">
+								<li>
+									<label>金&nbsp&nbsp&nbsp&nbsp额</label>
+									<input type="text" value="900.00" />
+								</li>
+								<li>
+									<select>
+										<option>我的钱包</option>
+									</select>
+								</li>
+								<li>
+									<select>
+										<optgroup label="基本生活">
+											<option>餐饮饮食</option>
+											<option>水果零食</option>
+											<option>日常用品</option>
+											<option>柴米油盐</option>
+											<option>物业水电</option>
+											<option>医药保健</option>
+										</optgroup>
+										<optgroup label="交通通讯">
+											<option>交通费</option>
+											<option>话费网费</option>
+											<option>养车费</option>
+										</optgroup>
+										<optgroup label="文化娱乐">
+											<option>旅游娱乐</option>
+											<option>博彩彩票</option>
+											<option>书报音像</option>
+											<option>数码产品</option>
+											<option>教育培训</option>
+										</optgroup>
+										<optgroup label="美容妆扮">
+											<option>服饰装扮</option>
+											<option>化妆品美容</option>
+
+										</optgroup>
+										<optgroup label="人情往来">
+											<option>人际往来</option>
+											<option>礼品礼金</option>
+											<option>孝敬长辈</option>
+										</optgroup>
+										<optgroup label="其他支出">
+											<option>房产车产</option>
+											<option>投资亏损</option>
+											<option>电器家居</option>
+											<option>其他杂项</option>
+										</optgroup>
+									</select>
+								</li>
+							</ul>
+							<ul class="list-box_ul">
+								<li>
+									<label>说&nbsp&nbsp&nbsp&nbsp明</label>
+									<input type="text" value="" style="width:330px;" />
+								</li>
+							</ul>
+							<ul class="list-box_ul">
+								<li>
+									<label>日&nbsp&nbsp&nbsp&nbsp期</label>
+									<input type="text" value="2015-06-09" onclick="WdatePicker()" />
+								</li>
+							</ul>
+						</div>
+						<div class="list-box_bt">
+							<span class="btn_T lt-del btn_delete" sid="6693971">
+ 								<a href="javascript:;">删除</a>
+							 </span>
+							<span class="btn_T edit_ok btn_settle" sid="6693971">
+ 								<a href="javascript:;">保存</a>
+							 </span>
+						</div>
+					</div>
+					<div class="title list_div f-clear">
+						<ul>
+							<li class="11">官网</li>
+							<li class="w01">支出</li>
+							<li class="w02">化妆品美容</li>
+							<li class="w03">12.00</li>
+							<li title="在浦江镇买了化妆品美容" class="w04">在浦江镇买了化妆品美容</li>
+							<li class="iconfont icon-down w05"></li>
+						</ul>
+					</div>
+					<div class="title list_div f-clear">
+						<ul>
+							<li class="11">官网</li>
+							<li class="w01">支出</li>
+							<li class="w02">化妆品美容</li>
+							<li class="w03">12.00</li>
+							<li title="在浦江镇买了化妆品美容" class="w04">在浦江镇买了化妆品美容</li>
+							<li class="iconfont icon-down w05"></li>
+						</ul>
+					</div>
+					<!--有数据的情况下]]-->
+				</div>
+			</div>
+			<div class="simple_right">
+				<div class="day30">
+					<p class="day30_tit">
+						30天内消费比例
+						<em>（显示最多的5类）</em>
+					</p>
+					<div class="scale_chart">
+						<div id="Bar2D5Div">
+
+						</div>
+						<script type="text/javascript">
+							var myChart = new FusionCharts("js/FusionChartsFree/Charts/FCF_Bar2D.swf", "myChartId_01", "280", "358");  
+						    	 
+						    	 myChart.setDataURL("datas/Data.xml");  
+						    	 myChart.render("Bar2D5Div");
+						</script>
+					</div>
+				</div>
+				<div class="zichan_box clearfix">
+					<p class="day30_tit">最近日均消费状况</p>
+					<div class="chart tally_chart">
+						<div id="Column2D5Div"></div>
+						<script type="text/javascript">
+							var myChart = new FusionCharts("js/FusionChartsFree/Charts/FCF_Column2D.swf", "myChartId_02", "280", "358");  
+						    	 
+						    	 myChart.setDataURL("datas/Data2.xml");  
+						    	 myChart.render("Column2D5Div");
+						</script>
+					</div>
+				</div>
+				<div class="font_list f-clear">
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<span class="l1"></span> 产品介绍
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="l2"></span> 感谢有您
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="l3"></span> 帮助中心
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="l4"></span> 爱记账壁纸
+							</a>
+						</li>
+					</ul>
+
+				</div>
+				<iframe width="250" scrolling="auto" height="90 frameborder=" 0 " src="index1.html " marginwidth="0 " marginheight="0 " allowtransparency="true " style="padding:10px 0 0 20px "></iframe>
+			</div>
+         
+			<!--內容结束区-->
+		</div>
+		<script type="text/javascript " src="js/Calc.js "></script>
+		<script language="javascript" type="text/javascript " src="js/My97DatePicker/WdatePicker.js "></script>
+		<script type="text/javascript" src="js/my.js "></script>
+
+		<!--<script type="text/javascript" src="js/lightbox.js "></script>-->
+		<script type="text/javascript" src="js/ajaxupload.3.6.js "></script>
+		<script type="text/javascript" src="js/simple_tally.js "></script>
+		<script type="text/javascript" src="js/h.js "></script>
+	    <script type="text/javascript" src="js/simple_tally.js"></script>
+		
+        <script type="text/javascript">
+        Ajzhan.common.user.simple_tally.cur_date();
+            Ajzhan.common.user.simple_tally.cur_date = "2015-06-08 ";
+            Ajzhan.common.user.simple_tally.selected_date = "2015-06-08 ";
+        </script>
+        
+        <div class="main_ft"></div>
+       <div class="footer">
+  	<p><a href="/index/about" target="_blank">关于爱记账</a> |
+            <a href="/index/product" target="_blank">产品介绍</a> |
+            <a href="/index/help" target="_blank">帮助中心</a> |
+            <a href="/index/thanks" target="_blank">感谢有你</a> |
+            <a href="/index/about/link" target="_blank">友情链接</a>
+        </p>
+  	<p>Copyright 2010-2015 www.ajzhan.com. All Rights Reserved</p>
+  	<p>粤ICP备05040000号</p>
+	<div class="f_loading" style="display:none" id="all_load"><img  border="0" src="/images/common/loading_c.gif"></div>
+</div>
+<div style="display:none">
+    <script language="javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb7c500c007e01a013524dc65b52aa8b9' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div> 
+	</body>
+
+</html>
